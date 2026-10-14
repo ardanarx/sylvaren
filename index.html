@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#f6f0df" />
+    <meta name="description" content="Sylvaren — Grow a home. Discover a world." />
+    <title>Sylvaren — Cozy Farming Adventure</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Sylvaren home"><span class="brand-leaf">✦</span> Sylvaren</a>
+        <div class="topbar-right">
+          <span id="save-status" class="status-pill">Local save</span>
+          <button id="save-button" class="small-button" type="button">Simpan</button>
+        </div>
+      </header>
+      <main class="game-shell">
+        <section class="game-frame" aria-label="Sylvaren game">
+          <div id="game"></div>
+          <div class="hud">
+            <div class="hud-card">
+              <div class="day-line"><span id="weather-icon">☀</span> <span id="day-label">Hari 1 · Pagi</span></div>
+              <div class="stat-line"><span>◉</span> <strong id="coin-label">120</strong> <span class="stat-caption">koin</span></div>
+            </div>
+            <div class="hud-card objective">
+              <span class="eyebrow">TUGAS HARI INI</span>
+              <strong id="objective-label">Tanam 3 benih</strong>
+              <span id="objective-progress">0 / 3 tanaman</span>
+            </div>
+          </div>
+          <div id="toast" class="toast" role="status" aria-live="polite"></div>
+          <div class="mobile-controls" aria-label="Kontrol layar sentuh">
+            <div class="dpad">
+              <button data-move="up" aria-label="Bergerak ke atas">▲</button>
+              <div class="dpad-mid"><button data-move="left" aria-label="Bergerak ke kiri">◀</button><button data-move="down" aria-label="Bergerak ke bawah">▼</button><button data-move="right" aria-label="Bergerak ke kanan">▶</button></div>
+            </div>
+            <div class="action-pad">
+              <button id="interact-touch" class="action-main">A<br><small>Aksi</small></button>
+              <button id="tool-touch" class="action-secondary">B<br><small>Alat</small></button>
+            </div>
+          </div>
+        </section>
+        <aside class="side-panel">
+          <div class="panel-heading"><div><span class="eyebrow">PETUALANGANMU</span><h1>Selamat datang di lembah.</h1></div><span class="sun-badge">☀</span></div>
+          <p class="intro">Rawat kebun kecilmu, temukan rahasia hutan, dan bangun rumah yang terasa seperti milik sendiri.</p>
+          <div class="tool-section">
+            <div class="section-title">Alat & aksi <span>1–4</span></div>
+            <div class="tool-grid">
+              <button class="tool-card selected" data-tool="hoe"><span class="tool-icon">⌁</span><span><b>Cangkul</b><small>Olah tanah</small></span><kbd>1</kbd></button>
+              <button class="tool-card" data-tool="seed"><span class="tool-icon">✿</span><span><b>Benih</b><small>Tanam tomat</small></span><kbd>2</kbd></button>
+              <button class="tool-card" data-tool="water"><span class="tool-icon">♧</span><span><b>Siram</b><small>Rawat tanaman</small></span><kbd>3</kbd></button>
+              <button class="tool-card" data-tool="hand"><span class="tool-icon">✋</span><span><b>Tangan</b><small>Panen / ambil</small></span><kbd>4</kbd></button>
+            </div>
+          </div>
+          <div class="inventory-section">
+            <div class="section-title">Tas petualang <span id="inventory-count">4 barang</span></div>
+            <div class="inventory-grid">
+              <div class="inventory-item"><span>🌱</span><div><b id="seed-count">5</b><small>Benih</small></div></div>
+              <div class="inventory-item"><span>🍅</span><div><b id="tomato-count">0</b><small>Tomat</small></div></div>
+              <div class="inventory-item"><span>🪵</span><div><b id="wood-count">0</b><small>Kayu</small></div></div>
+              <div class="inventory-item"><span>🪨</span><div><b id="stone-count">0</b><small>Batu</small></div></div>
+            </div>
+          </div>
+          <div class="guide-card">
+            <div class="guide-icon">✦</div><div><b>Mulai dari kebun</b><p>Cangkul tanah kosong, tanam benih, lalu siram. Tanaman tumbuh seiring pergantian hari.</p></div>
+          </div>
+          <div class="panel-actions"><button id="sleep-button" class="primary-button">☾ &nbsp; Tidur & lanjut hari</button><button id="reset-button" class="text-button">Mulai permainan baru</button></div>
+          <div class="connection-note"><span class="connection-dot"></span><span id="connection-label">Progres tersimpan di perangkat ini</span></div>
+        </aside>
+      </main>
+      <footer><span>✦ SYLVAREN</span><span>Grow a home. Discover a world.</span><span>Prototype v0.1</span></footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
